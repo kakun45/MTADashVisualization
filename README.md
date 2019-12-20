@@ -1,6 +1,7 @@
 # MTADashVisualization
 Python &amp; Dash Visualization of MTA turnstiles Exits &amp; Entries in one week
 -------
+"""
 requirements.txt
 MTAScrappe.ipynb - Jupiter notebook file to Scrape data
 turnstile_191012.txt - Scraped data. Initial MTA raw file
@@ -14,3 +15,4 @@ index10.html - test for the fist mapped station (59/Lex)
 app-MTA-web-map.py - python file for randering a map of Midtown (Map5.html)
 Map5.html - a map of Midtown that was created with Folium 
 Map4.html - testing mapping of whole NYC #TODO: the full data is not cleaned. The green tint on map shows the big circle as  Yankee's Stadium station, which the number is too big - find the reason.
+"""
