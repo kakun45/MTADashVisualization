@@ -9,3 +9,9 @@ To Run:
 python callback-MTA-ent_ext-Map.py
 ```
 
+# How to format
+
+note: black's default is 88 char per line
+```
+black FILENAME
+```
