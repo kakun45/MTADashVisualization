@@ -77,10 +77,3 @@ def update_figure(selected_time):
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-    #why did i pick the station 
-    #what is it there for me ?
-    #what it means for me?
-    #why so meny ppl are in there?
-    #coffee around the station
-    # the visual poart is seplementary

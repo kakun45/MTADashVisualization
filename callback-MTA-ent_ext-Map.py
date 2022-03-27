@@ -12,10 +12,6 @@ import folium
 #print(help(html.Div))
 
 #load a file
-#df = pd.read_csv('_59THST_midtown_diff.csv') #works
-#df = pd.read_csv('_59THST_midtown_timebins.csv') #works
-#df = pd.read_csv('_59THST_midtown_timebins_sum.csv') #works
-#df = pd.read_csv('_59THST_midtown_timebins_sum_grater10.csv') #works
 df = pd.read_csv('_midtown_timebins_sum_grater16_sort.csv') # final works
 
 
@@ -23,7 +19,7 @@ df = pd.read_csv('_midtown_timebins_sum_grater16_sort.csv') # final works
 app = dash.Dash()
 
 #from https://dash.plot.ly/dash-core-components/dropdown
-#Crate a dash layout that con tains a Graph component
+#Crate a dash layout that contains a Graph component
 hour_options = []
 for hour in df['HODBIN2'].unique():
     hour_options.append({'label':str(hour),'value':hour})
@@ -67,7 +63,7 @@ def update_figure(selected_time):
         ))
     for station_name in filtered_df['station_id'].unique():
         df_by_station = filtered_df[filtered_df['station_id'] == station_name]
-        traces.append(go.Scatter( #maybe use Bar
+        traces.append(go.Scatter( 
             y = df_by_station['EXITS_diff_sum'],
             x = df_by_station['WEEKDAY'],
             text = df_by_station['HODBIN2'],
@@ -90,15 +86,3 @@ def update_figure(selected_time):
 
 if __name__ == '__main__':
     app.run_server(host='127.0.0.1', port=8080, debug=True)
-
-    #why did i pick the station -> Midtown is my main Focus of my interest (ex.Photography)
-    #what is it there for me -> my stations where I mostly go to (faster, closer)
-    #what it means for me? - The fastest time to travel - lo/ for Booked shoots - hi/ for random shootings & Quick instant photo sales
-    
-    #why so many ppl are in there at given time? - visualization shows 47th st Rock (ex. pic)
-    #a coffee shop or a mobile food/drink tracks: where to cell coffee around the station - time?
-    
-    #the visual part: I used Dash and Folium in a different files and I put them together to visualize
-    
-    #my plans: to transform project into flask to rander the different htmls to get control over the zizes of the bubles in different times
-    #   and maybe add a several weeks into a project to compare and a year build the expectencies

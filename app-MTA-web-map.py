@@ -1,6 +1,5 @@
 import folium
 import pandas 
-#import branca.colormap as cm
 
 data = pandas.read_csv('_midtown_timebins_sum_grater16_sort.csv')
 lat = list(data['LAT']) 

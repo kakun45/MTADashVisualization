@@ -87,10 +87,3 @@ def update_figure(selected_time):
 
 if __name__ == '__main__':
     app.run_server(host='127.0.0.2', debug=True)
-
-    #why did i pick the station - 
-    #what is it there for me ? - my stations where I mostly go to 
-    #what it means for me? - The best time to travel - lo/ for bussineses the best time to cell - hi
-    #why so meny ppl are in there at given time? - visualization
-    #a coffee shpo or a mobile food/drink tracks: where to cell coffee around the station - time?
-    # the visual poart is seplementary 

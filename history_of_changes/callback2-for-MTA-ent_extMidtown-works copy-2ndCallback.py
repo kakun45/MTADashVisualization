@@ -12,10 +12,6 @@ import folium
 #print(help(html.Div))
 
 #load a file
-#df = pd.read_csv('_59THST_midtown_diff.csv') #works
-#df = pd.read_csv('_59THST_midtown_timebins.csv') #works
-#df = pd.read_csv('_59THST_midtown_timebins_sum.csv') #works
-#df = pd.read_csv('_59THST_midtown_timebins_sum_grater10.csv') #works
 df = pd.read_csv('_59THST_midtown_timebins_sum_grater10_sort.csv')
 
 #Объекты Dash Slider имеют дело только с int/ float, 
@@ -145,10 +141,3 @@ def update_figure_map(selected_time):
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-    #why did i pick the station - 
-    #what is it there for me ? - my stations where I mostly go to 
-    #what it means for me? - The best time to travel - lo/ for bussineses the best time to cell - hi
-    #why so meny ppl are in there at given time? - visualization
-    #a coffee shpo or a mobile food/drink tracks: where to cell coffee around the station - time?
-    # the visual poart is seplementary 

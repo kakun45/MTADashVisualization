@@ -5,7 +5,7 @@ import numpy as np
 IMPORTANT_FILE1 = "turnstile_191019.txt"
 MTA1stTxt = "turnstile_191019.txt"
 
-#test dataFrame for testing
+#a dataFrame for testing
 def newdf():
     return pd.DataFrame({
         "a": [1,2,3],
@@ -34,9 +34,9 @@ def diffColEntr(df):
 
 def addDiffs(df_list, colname, newcolname):
     """
-    :param df_list: a list of dataframes that contiain an "ENTRIES" column
-        each data frame is for a specific turnstile
-    :returns: a list of dataframes, each with a new 'newcolname' 
+    :param df_list: a list of dataFrames that contiain an "ENTRIES" column
+        each dataFrame is for a specific turnstile
+    :returns: a list of dataFrames, each with a new 'newcolname' 
         (ex."entries_diff"/"exits_diff") column added
     """
     turnstile_dfs_diff = []
@@ -48,7 +48,7 @@ def addDiffs(df_list, colname, newcolname):
     return turnstile_dfs_diff
     
 
-#plot the E 59th station on the map.
+#plot the E 59th station on the map. >> index10.html
 #pin one location of E 59th st in blue on the Midtown map, save the result into html file map-index
 def map59th():
     map = folium.Map(location = [40.7628, -73.9676], zoom_start = 70, tiles = 'Stamen Terrain')
@@ -60,7 +60,7 @@ def map59th():
                     fill = True).add_to(map)
     map.save('map-index.html')
 
-    #TODO plot all the stations on the map
+# plot all the stations on the map
 #def mapMidtown(df):
     #map = folium.Map(location = [40.7628, -73.9676], zoom_start = 60, tiles = 'Stamen Terrain')
 
@@ -100,8 +100,9 @@ def unique_station(df, colname):
 #'HODBIN' - will cretes a new col with HOD+bins, that is interval, not an int/float
 #'HODBIN2' - a new col (int) - represents a 1st hour from bins intervals - adds +1hour for exclusively created bins
 def bintimes(df, hour_day_name, timestamp):
-    # create Hour of Day bins
-    # use a negative number at the beginning to ensure we do not lose midnight
+    '''create Hour of Day bins
+    use a negative number at the beginning to ensure we do not lose midnight
+    '''
     bins = [-1,3,7,11,15,19,24] 
     df2 = df.copy()
     df2[hour_day_name] = [r.hour for r in df2[timestamp]] 
@@ -162,7 +163,7 @@ def mergeLeft(df, df_with_geo, column_toMerge):
     return df2
 
 
-#drop values less than 10,
+#drops values less than 10,
 #where num = 10 - number which defines drop those that "smaller than"
 # 'col_togothrough' - the col where the fun will look for num
 def less10(df, col_togothrough, num):
@@ -174,7 +175,7 @@ def less10(df, col_togothrough, num):
 #to sort a df by a proper order of a weekday, this func adds a ne col Day_id according its dict, where Sun is 0..Sat is 6
 #takes a 'col_weekday' col with a weekday string
 def sorterOfWeekday(df, col_weekday):
-    # it was daymap = { "Sunday": 0, "Monday": 1, "Tuesday": 2, "Wednesday": 3, "Thursday": 4, "Friday": 5, "Saturday": 6}
+    # don't use daymap = { "Sunday": 0, "Monday": 1, "Tuesday": 2, "Wednesday": 3, "Thursday": 4, "Friday": 5, "Saturday": 6}
     daymap = {"Monday": 0, "Tuesday": 1, "Wednesday": 2, "Thursday": 3, "Friday": 4, "Saturday": 5, "Sunday": 6}
     df2 = df.copy() 
     df2['Day_id'] = df2.index
