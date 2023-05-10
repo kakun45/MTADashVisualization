@@ -1,6 +1,11 @@
-Auth. - Xeniya Shoiko
+Author - Xeniya Shoiko
 
-main file to run: callback-MTA-ent_ext-Map.py
+Map4:
+![Manhattan Map with MTA stops](https://github.com/kakun45/MTADashVisualization/assets/53381916/496d7925-22d2-4dde-877c-ad7406662f96)
+Map5:
+![Manhattan Midtown Only Map with MTA stops](https://github.com/kakun45/MTADashVisualization/assets/53381916/23e9dd41-fc84-4eb4-80b9-a1b2f3e8d616)
+
+main file to run: `callback-MTA-ent_ext-Map.py`
 
 main product 2 interactive HTML files ready for a build-in: 
 entries(green)/exits(red) 
